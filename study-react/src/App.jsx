@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ColoredMessage } from "./components/ColoredMessage";
 import { CssModules } from "./components/CssModules";
+import { StyledComponents } from "./components/StyledComponents";
 
 export const App = () => {
     console.log('レンダリング');
@@ -16,8 +17,10 @@ export const App = () => {
             <ColoredMessage color="pink">元気です</ColoredMessage>
             <button onClick={onClickButton}>ボタン</button>
             <p>{num}</p>
-            <p>------</p>
+            <p>--- CssModules ---</p>
             <CssModules></CssModules>
+            <p>--- StyledComponents ---</p>
+            <StyledComponents></StyledComponents>
         </div>
     );
 };
