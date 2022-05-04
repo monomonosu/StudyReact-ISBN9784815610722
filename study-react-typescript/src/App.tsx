@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import { ListItem } from "./components/ListItem";
+import axios from "axios";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+type Music = {
+  id: number;
+  musicName: string;
+  fileSize: string;
 }
 
-export default App;
+export const App = () => {
+  const [musics, setMusics] = useState<Music[]>([]);
+  useEffect(() => {
+    axios.get<Music[]>("http://10.231.136.165:8080/test").then((response) => {
+      setMusics(response.data);
+    })
+  }, []);
+
+  return (
+    <div>
+      {musics.map(music => (<ListItem id={music.id} musicName={music.musicName} fileSize={music.fileSize} key={music.musicName}></ListItem>))}
+    </div>
+  );
+};
