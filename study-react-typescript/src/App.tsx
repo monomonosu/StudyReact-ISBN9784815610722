@@ -13,7 +13,7 @@ export const App = () => {
 
   return (
     <div>
-      {musics.map(music => (<ListItem id={music.id} musicName={music.musicName} fileSize={music.fileSize} key={music.musicName}></ListItem>))}
+      {musics.map(music => (<ListItem id={music.id} musicName={music.musicName} key={music.musicName}></ListItem>))}
     </div>
   );
 };

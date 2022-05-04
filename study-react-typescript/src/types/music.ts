@@ -3,5 +3,5 @@
 export type Music = {
     id: number;
     musicName: string;
-    fileSize: string;
+    fileSize?: string;
 };
