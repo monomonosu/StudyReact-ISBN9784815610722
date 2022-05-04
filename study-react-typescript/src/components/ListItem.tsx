@@ -1,8 +1,4 @@
-type Music = {
-    id: number;
-    musicName: string;
-    fileSize: string;
-}
+import type { Music } from "../types/music";
 
 export const ListItem = (props: Music) => {
     const { id, musicName, fileSize } = props;

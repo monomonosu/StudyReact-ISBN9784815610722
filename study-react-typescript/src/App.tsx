@@ -1,12 +1,7 @@
 import { useEffect, useState } from "react";
 import { ListItem } from "./components/ListItem";
 import axios from "axios";
-
-type Music = {
-  id: number;
-  musicName: string;
-  fileSize: string;
-}
+import type { Music } from "./types/music";
 
 export const App = () => {
   const [musics, setMusics] = useState<Music[]>([]);
